@@ -1,4 +1,4 @@
-const API_SERVER = "http://localhost:5000/";
+const API_SERVER = "https://api.gallery-demo.theel0ja.info/";
 
 
 const map = L.map("map", {
