@@ -19,7 +19,7 @@ var photoLayer = L.photo.cluster({ spiderfyDistanceMultiplier: 1.2 }).on('click'
 });
 
 function openInOsmButton(location) {
-  const osmLink = `https://www.openstreetmap.org/?mlat=${location.lat}&mlon=${location.lng}&zoom=16&layers=M`;
+  const osmLink = `https://www.openstreetmap.org/?mlat=${location.lat}&mlon=${location.lon}&zoom=16&layers=M`;
 
   return `<a href="${osmLink}">Open in OpenStreetMap</a>`
 }
