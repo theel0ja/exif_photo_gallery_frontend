@@ -2,9 +2,8 @@ L.mapbox.accessToken = "pk.eyJ1IjoidGhlZWwwamEiLCJhIjoiY2pteDl5cDYwMG5rbzN2bzFjd
 const API_SERVER = "https://api.gallery-demo.theel0ja.info/";
 
 
-const map = L.map("map", {
-  maxZoom: 17
-});
+const map = L.mapbox.map("map");
+//  .setMaxZoom(17);
 
 // map.setView([51.505, -0.09], 13);
 
@@ -56,4 +55,5 @@ fetch(API_SERVER)
 
     photoLayer.add(photos).addTo(map);
     map.fitBounds(photoLayer.getBounds());
+    map.setZoom(17);
   });
