@@ -1,3 +1,4 @@
+L.mapbox.accessToken = "pk.eyJ1IjoidGhlZWwwamEiLCJhIjoiY2pteDl5cDYwMG5rbzN2bzFjdzlqZHRsdCJ9.U1pbJeCypbqZcil_ooucLg";
 const API_SERVER = "https://api.gallery-demo.theel0ja.info/";
 
 
@@ -7,8 +8,16 @@ const map = L.map("map", {
 
 // map.setView([51.505, -0.09], 13);
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
+// L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//   attribution: "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors"
+// }).addTo(map);
+
+L.control.layers({
+  'Mapbox Streets': L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v9').addTo(map),
+  'Mapbox Satellite Streets': L.mapbox.styleLayer('mapbox://styles/mapbox/satellite-streets-v9'),
+  'OpenStreetMap': L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  })
 }).addTo(map);
 
 var photoLayer = L.photo.cluster({ spiderfyDistanceMultiplier: 1.2 }).on('click', function (evt) {
